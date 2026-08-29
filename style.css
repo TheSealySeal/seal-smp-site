@@ -1,0 +1,886 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Courier New", monospace;
+    background: #111;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+/* TOP BAR */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 64px;
+    padding: 0 6%;
+
+    background: #171717;
+    border-bottom: 4px solid #000;
+
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.logo-seal {
+    color: #7ee7ff;
+}
+
+.logo-smp {
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 14px;
+
+    padding: 10px 12px;
+
+    transition:
+        transform 0.1s,
+        background 0.1s;
+}
+
+nav a:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+nav a:active {
+    transform: translateY(2px);
+}
+
+
+/* HERO */
+
+.hero {
+    position: relative;
+    min-height: 720px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            #72cfff 0%,
+            #a8e6ff 65%,
+            #d8f6ff 100%
+        );
+}
+
+
+/* CLOUDS */
+
+.cloud {
+    position: absolute;
+
+    width: 150px;
+    height: 45px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        35px -20px 0 rgba(255, 255, 255, 0.8),
+        75px -8px 0 rgba(255, 255, 255, 0.8),
+        110px 5px 0 rgba(255, 255, 255, 0.8);
+}
+
+.cloud-1 {
+    top: 120px;
+    left: 7%;
+}
+
+.cloud-2 {
+    top: 210px;
+    right: 10%;
+    transform: scale(0.75);
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    width: min(900px, 92%);
+
+    padding-top: 40px;
+    padding-bottom: 130px;
+
+    text-align: center;
+}
+
+
+/* MINECRAFT LOGO */
+
+.grass-logo {
+    width: min(620px, 90%);
+    margin: 0 auto 22px;
+
+    border: 5px solid #111;
+
+    box-shadow:
+        8px 8px 0 rgba(0, 0, 0, 0.45);
+
+    transform: rotate(-1deg);
+}
+
+.grass-top {
+    height: 28px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #35a83b 0 18px,
+            #46c447 18px 36px,
+            #2f9635 36px 54px
+        );
+
+    border-bottom: 5px solid #1e641f;
+}
+
+.dirt-part {
+    min-height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #714020 0 12px,
+            #804b26 12px 24px,
+            #60361b 24px 36px
+        );
+
+    color: #fff;
+
+    font-size: clamp(25px, 5vw, 52px);
+    font-weight: 900;
+
+    text-shadow:
+        4px 4px 0 #000,
+        -1px -1px 0 #000;
+
+    letter-spacing: 2px;
+}
+
+.minecraft-subtitle {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    color: #1c1c1c;
+
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.6;
+
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+
+/* PANELS */
+
+.mc-panel {
+    background: #222;
+
+    border: 4px solid #000;
+
+    box-shadow:
+        7px 7px 0 rgba(0, 0, 0, 0.55);
+
+    color: #fff;
+}
+
+.server-panel {
+    width: min(760px, 100%);
+    margin: 0 auto;
+
+    padding: 0 0 20px;
+}
+
+.panel-title {
+    padding: 13px 16px;
+
+    background: #333;
+
+    border-bottom: 4px solid #000;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    text-align: left;
+}
+
+
+/* SERVER INFO */
+
+.server-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-bottom: 4px solid #000;
+}
+
+.info-item {
+    min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+
+    border-right: 3px solid #000;
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-item span,
+.ip-box span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #aaa;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.info-item strong {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.uptime-item {
+    min-width: 0;
+}
+
+.uptime-item small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #ddd;
+
+    font-size: 12px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+
+/* STATUS */
+
+.status.online {
+    color: #55ff55;
+}
+
+.status.offline {
+    color: #ff5555;
+}
+
+.status.checking {
+    color: #ffff55;
+}
+
+.status.unknown {
+    color: #aaa;
+}
+
+
+/* IP BOX */
+
+.ip-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    border-bottom: 4px solid #000;
+}
+
+.ip-box span {
+    margin: 0;
+}
+
+.ip-box strong {
+    flex: 1;
+
+    font-family: monospace;
+    font-size: 18px;
+
+    color: #fff;
+
+    word-break: break-all;
+}
+
+
+/* BUTTONS */
+
+button,
+.mc-button {
+    border: 4px solid #000;
+
+    background: #777;
+
+    color: #fff;
+
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 900;
+
+    text-decoration: none;
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 -4px 0 rgba(0, 0, 0, 0.25),
+        4px 4px 0 #000;
+
+    transition:
+        transform 0.08s,
+        filter 0.08s;
+}
+
+button:hover,
+.mc-button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+button:active,
+.mc-button:active {
+    transform: translate(3px, 3px);
+
+    box-shadow:
+        inset 0 -2px 0 rgba(0, 0, 0, 0.25),
+        1px 1px 0 #000;
+}
+
+.mc-button.green {
+    background: #3b9b35;
+}
+
+.mc-button.purple {
+    background: #6651b5;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    margin-top: 28px;
+}
+
+
+/* GROUND */
+
+.ground {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+.grass-layer {
+    height: 28px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #3aaa3a 0 20px,
+            #48bd45 20px 40px,
+            #2f9432 40px 60px
+        );
+
+    border-top: 4px solid #1e641f;
+}
+
+.dirt-layer {
+    height: 95px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #754321 0 16px,
+            #623719 16px 32px,
+            #814b26 32px 48px
+        );
+
+    border-top: 5px solid #111;
+}
+
+
+/* SECTIONS */
+
+.minecraft-section {
+    padding: 90px 6%;
+
+    background:
+        linear-gradient(
+            #292929,
+            #1c1c1c
+        );
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    max-width: 1000px;
+
+    margin: 0 auto 50px;
+}
+
+.section-title h2 {
+    flex-shrink: 0;
+
+    color: #fff;
+
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 900;
+
+    text-shadow: 4px 4px 0 #000;
+}
+
+.pixel-line {
+    flex: 1;
+
+    height: 6px;
+
+    background: #555;
+
+    border: 2px solid #000;
+}
+
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.about-card {
+    padding: 28px;
+
+    min-height: 240px;
+
+    text-align: center;
+
+    transition:
+        transform 0.12s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    margin-bottom: 16px;
+
+    font-size: 42px;
+}
+
+.about-card h3 {
+    margin-bottom: 14px;
+
+    font-size: 20px;
+}
+
+.about-card p {
+    color: #ccc;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* RULES */
+
+.rules-section {
+    background:
+        linear-gradient(
+            #1d1d1d,
+            #111
+        );
+}
+
+.rules-book {
+    max-width: 850px;
+
+    margin: auto;
+
+    background: #d4b77a;
+
+    color: #241b0f;
+
+    border: 6px solid #000;
+
+    box-shadow:
+        10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.book-header {
+    padding: 20px;
+
+    background: #b89353;
+
+    border-bottom: 5px solid #000;
+
+    font-size: 22px;
+    font-weight: 900;
+
+    text-align: center;
+}
+
+.rules-list {
+    padding: 20px;
+}
+
+.rule {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    padding: 18px 10px;
+
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.35);
+}
+
+.rule:last-child {
+    border-bottom: none;
+}
+
+.rule-number {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #3a2a18;
+
+    color: #fff;
+
+    border: 3px solid #000;
+
+    font-weight: 900;
+}
+
+.rule h3 {
+    margin-bottom: 5px;
+
+    font-size: 16px;
+}
+
+.rule p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.rule.allowed .rule-number {
+    background: #347b32;
+}
+
+.rule.warning .rule-number {
+    background: #a85c25;
+}
+
+
+/* DISCORD */
+
+.discord-section {
+    padding: 80px 6%;
+
+    background: #151515;
+}
+
+.discord-box {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 30px;
+
+    background: #252525;
+
+    border: 5px solid #000;
+
+    box-shadow:
+        8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.discord-icon {
+    font-size: 50px;
+}
+
+.discord-box h2 {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+}
+
+.discord-box p {
+    color: #ccc;
+
+    line-height: 1.5;
+}
+
+.discord-box .no-dm {
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    color: #aaa;
+}
+
+.discord-box .mc-button {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 6%;
+
+    background: #090909;
+
+    border-top: 4px solid #000;
+
+    color: #aaa;
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+footer div {
+    color: #fff;
+}
+
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 30px;
+
+    z-index: 9999;
+
+    padding: 13px 20px;
+
+    background: #222;
+
+    border: 4px solid #000;
+
+    box-shadow: 5px 5px 0 #000;
+
+    font-weight: 900;
+
+    transform:
+        translate(-50%, 120px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+.toast.show {
+    transform:
+        translate(-50%, 0);
+
+    opacity: 1;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .topbar {
+        padding: 12px 5%;
+
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+
+    .hero {
+        min-height: 760px;
+    }
+
+    .hero-content {
+        padding-top: 70px;
+        padding-bottom: 140px;
+    }
+
+
+    .server-info {
+        grid-template-columns: 1fr;
+    }
+
+    .info-item {
+        min-height: 80px;
+
+        border-right: none;
+        border-bottom: 3px solid #000;
+    }
+
+    .info-item:last-child {
+        border-bottom: none;
+    }
+
+
+    .ip-box {
+        flex-wrap: wrap;
+    }
+
+    .ip-box strong {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: min(300px, 90%);
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .discord-box {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .discord-box .mc-button {
+        margin-left: 0;
+    }
+
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .minecraft-subtitle {
+        font-size: 13px;
+    }
+
+    .dirt-part {
+        min-height: 85px;
+
+        font-size: 23px;
+    }
+
+    .server-panel {
+        width: 96%;
+    }
+
+}

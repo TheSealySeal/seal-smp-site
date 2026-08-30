@@ -16,7 +16,9 @@ body {
 }
 
 
-/* TOP BAR */
+/* =========================
+   TOP BAR
+========================= */
 
 .topbar {
     position: sticky;
@@ -31,6 +33,7 @@ body {
     padding: 0 6%;
 
     background: #171717;
+
     border-bottom: 4px solid #000;
 
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
@@ -40,6 +43,7 @@ body {
     font-size: 22px;
     font-weight: 900;
     letter-spacing: 1px;
+
     text-shadow: 3px 3px 0 #000;
 }
 
@@ -59,8 +63,9 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    font-weight: 900;
+
     font-size: 14px;
+    font-weight: 900;
 
     padding: 10px 12px;
 
@@ -79,10 +84,13 @@ nav a:active {
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     position: relative;
+
     min-height: 720px;
 
     display: flex;
@@ -124,6 +132,7 @@ nav a:active {
 .cloud-2 {
     top: 210px;
     right: 10%;
+
     transform: scale(0.75);
 }
 
@@ -143,10 +152,13 @@ nav a:active {
 }
 
 
-/* MINECRAFT LOGO */
+/* =========================
+   MINECRAFT LOGO
+========================= */
 
 .grass-logo {
     width: min(620px, 90%);
+
     margin: 0 auto 22px;
 
     border: 5px solid #111;
@@ -209,13 +221,17 @@ nav a:active {
 
     font-size: 16px;
     font-weight: 900;
+
     line-height: 1.6;
 
-    text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+    text-shadow:
+        1px 1px rgba(255, 255, 255, 0.5);
 }
 
 
-/* PANELS */
+/* =========================
+   PANELS
+========================= */
 
 .mc-panel {
     background: #222;
@@ -230,6 +246,7 @@ nav a:active {
 
 .server-panel {
     width: min(760px, 100%);
+
     margin: 0 auto;
 
     padding: 0 0 20px;
@@ -249,11 +266,15 @@ nav a:active {
 }
 
 
-/* SERVER INFO */
+/* =========================
+   SERVER INFO
+========================= */
 
 .server-info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     border-bottom: 4px solid #000;
 }
@@ -263,6 +284,7 @@ nav a:active {
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
@@ -285,6 +307,7 @@ nav a:active {
 
     font-size: 11px;
     font-weight: 900;
+
     letter-spacing: 1px;
 }
 
@@ -306,6 +329,7 @@ nav a:active {
 
     font-size: 12px;
     font-weight: 900;
+
     white-space: nowrap;
 }
 
@@ -329,11 +353,14 @@ nav a:active {
 }
 
 
-/* IP BOX */
+/* =========================
+   IP BOX
+========================= */
 
 .ip-box {
     display: flex;
     align-items: center;
+
     gap: 14px;
 
     padding: 18px 20px;
@@ -349,6 +376,7 @@ nav a:active {
     flex: 1;
 
     font-family: monospace;
+
     font-size: 18px;
 
     color: #fff;
@@ -357,7 +385,9 @@ nav a:active {
 }
 
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 button,
 .mc-button {
@@ -368,6 +398,7 @@ button,
     color: #fff;
 
     font-family: "Courier New", monospace;
+
     font-size: 14px;
     font-weight: 900;
 
@@ -389,6 +420,7 @@ button,
 button:hover,
 .mc-button:hover {
     filter: brightness(1.15);
+
     transform: translateY(-2px);
 }
 
@@ -410,18 +442,24 @@ button:active,
 }
 
 
-/* HERO BUTTONS */
+/* =========================
+   HERO BUTTONS
+========================= */
 
 .hero-buttons {
     display: flex;
+
     justify-content: center;
+
     gap: 16px;
 
     margin-top: 28px;
 }
 
 
-/* GROUND */
+/* =========================
+   GROUND
+========================= */
 
 .ground {
     position: absolute;
@@ -461,7 +499,9 @@ button:active,
 }
 
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 .minecraft-section {
     padding: 90px 6%;
@@ -475,7 +515,9 @@ button:active,
 
 .section-title {
     display: flex;
+
     align-items: center;
+
     gap: 20px;
 
     max-width: 1000px;
@@ -491,7 +533,8 @@ button:active,
     font-size: clamp(24px, 4vw, 38px);
     font-weight: 900;
 
-    text-shadow: 4px 4px 0 #000;
+    text-shadow:
+        4px 4px 0 #000;
 }
 
 .pixel-line {
@@ -505,29 +548,66 @@ button:active,
 }
 
 
-/* ABOUT */
+/* =========================
+   ABOUT CARDS
+========================= */
+
+/*
+   IMPORTANT:
+   Explicitly lock the order:
+   1 = Minecraft
+   2 = SMP
+   3 = Seals
+*/
 
 .about-grid {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     gap: 25px;
 
-    max-width: 1100px;
-
-    margin: auto;
+    direction: ltr;
 }
 
 .about-card {
-    padding: 28px;
+    width: 100%;
+    min-width: 0;
 
     min-height: 240px;
+
+    padding: 28px;
 
     text-align: center;
 
     transition:
         transform 0.12s;
 }
+
+
+/* FORCE CORRECT CARD ORDER */
+
+.about-card:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.about-card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.about-card:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
 
 .about-card:hover {
     transform: translateY(-5px);
@@ -554,7 +634,9 @@ button:active,
 }
 
 
-/* RULES */
+/* =========================
+   RULES
+========================= */
 
 .rules-section {
     background:
@@ -598,12 +680,15 @@ button:active,
 
 .rule {
     display: flex;
+
     align-items: flex-start;
+
     gap: 18px;
 
     padding: 18px 10px;
 
-    border-bottom: 2px dashed rgba(0, 0, 0, 0.35);
+    border-bottom:
+        2px dashed rgba(0, 0, 0, 0.35);
 }
 
 .rule:last-child {
@@ -617,6 +702,7 @@ button:active,
     height: 38px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -637,6 +723,7 @@ button:active,
 
 .rule p {
     font-size: 14px;
+
     line-height: 1.5;
 }
 
@@ -649,7 +736,9 @@ button:active,
 }
 
 
-/* DISCORD */
+/* =========================
+   DISCORD
+========================= */
 
 .discord-section {
     padding: 80px 6%;
@@ -663,7 +752,9 @@ button:active,
     margin: auto;
 
     display: flex;
+
     align-items: center;
+
     gap: 25px;
 
     padding: 30px;
@@ -702,14 +793,18 @@ button:active,
 
 .discord-box .mc-button {
     margin-left: auto;
+
     flex-shrink: 0;
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -730,7 +825,9 @@ footer div {
 }
 
 
-/* TOAST */
+/* =========================
+   TOAST
+========================= */
 
 .toast {
     position: fixed;
@@ -746,7 +843,8 @@ footer div {
 
     border: 4px solid #000;
 
-    box-shadow: 5px 5px 0 #000;
+    box-shadow:
+        5px 5px 0 #000;
 
     font-weight: 900;
 
@@ -770,7 +868,9 @@ footer div {
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 750px) {
 
@@ -778,6 +878,7 @@ footer div {
         padding: 12px 5%;
 
         flex-direction: column;
+
         gap: 10px;
     }
 
@@ -787,6 +888,7 @@ footer div {
 
     nav a {
         font-size: 11px;
+
         padding: 8px;
     }
 
@@ -797,6 +899,7 @@ footer div {
 
     .hero-content {
         padding-top: 70px;
+
         padding-bottom: 140px;
     }
 
@@ -809,6 +912,7 @@ footer div {
         min-height: 80px;
 
         border-right: none;
+
         border-bottom: 3px solid #000;
     }
 
@@ -823,6 +927,7 @@ footer div {
 
     .ip-box strong {
         width: 100%;
+
         flex-basis: 100%;
     }
 
@@ -837,8 +942,21 @@ footer div {
     }
 
 
+    /*
+       On phones the cards become one column.
+    */
+
     .about-grid {
         grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .about-card:nth-child(1),
+    .about-card:nth-child(2),
+    .about-card:nth-child(3) {
+        grid-column: 1;
+        grid-row: auto;
     }
 
 
@@ -855,6 +973,7 @@ footer div {
 
     footer {
         flex-direction: column;
+
         gap: 10px;
 
         text-align: center;
@@ -862,6 +981,10 @@ footer div {
 
 }
 
+
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media (max-width: 450px) {
 
